@@ -1,0 +1,23 @@
+package com.mac.project.web.calculator;
+
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
+import java.io.IOException;
+
+public class Subtraction extends HttpServlet{
+
+    @Override
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        String firstNumber = request.getParameter("firstNumber");
+        String secondNumber = request.getParameter("secondNumber");
+        int subtraction = Integer.parseInt(firstNumber) - Integer.parseInt(secondNumber);
+
+        response.setContentType("text/html");   // he ka lihil aahe
+        response.getWriter().write("Subtraction is:" + subtraction + "<br/> <a href= './Calculator2.html'>click here<a/> to continue.");
+
+
+    }
+
+}
